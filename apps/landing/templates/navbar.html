@@ -1,18 +1,134 @@
+<style>
+    .drawer {
+  position: fixed;
+  top: 0;
+  left: -500px;
+  width: 250px;
+  height: 100%;
+  background-color: #111;
+  color: #eee;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.drawer.open {
+  left: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.drawer-links {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.drawer-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.drawer-link:hover {
+  color: #fff;
+}
+
+.drawer-button {
+  background-color: #a855f7;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.drawer-button:hover {
+  background-color: #9333ea;
+}
+
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 999;
+}
+
+.drawer-overlay.show {
+  display: block;
+}
+
+</style>
+
 <nav class="bg-black flex justify-between items-center py-4 px-8 text-gray-300 shadow-md outline-default outline-color-gray-800">
     <div class="flex space-x-8 items-center">
-        <a href="/" class="text-xl text-gray-300 no-underline font-bold hover:text-white transition-all duration-300">
+        <a href="/" class="text-xl lg:text-2xl text-gray-300 no-underline font-bold hover:text-white transition-all duration-300">
             Virgo
         </a>
 
-        <div class="space-x-4">
+        <div class="hidden md:block space-x-4">
             <a class="no-underline text-gray-300 hover:text-white hover:underline transition-all duration-300" href="">Documentation</a>
             <a class="no-underline text-gray-300 hover:text-white hover:underline transition-all duration-300" href="">About</a>
         </div>
     </div>
 
-    <div class="flex items-center space-x-4">
+    <div class="hidden md:flex items-center space-x-4">
         <a href="https://github.com/DaleStack/Virgo" target="_blank"><img class="shadow-md shadow-color-red-500 flex items-center" src="static/landing/images/github.svg" alt="github"></a>
         <a class="no-underline text-gray-600 hover:text-white shadow-lg bg-purple-400 rounded-md px-2 py-1 hover:bg-purple-600 transition-all duration-300" href="">Get Started</a>
     </div>
 
+    <div class="md:hidden">
+        <img onclick="openDrawer()" src="static/landing/images/menu.svg" alt="Menu">
+    </div>
 </nav>
+
+<!-- Drawer -->
+<div id="drawer" class="drawer">
+  <div class="drawer-header">
+    <span class="drawer-title">Menu</span>
+    <button onclick="closeDrawer()" class="drawer-close">&times;</button>
+  </div>
+  <nav class="drawer-links">
+    <a href="/" class="drawer-link">Home</a>
+    <a href="#" class="drawer-link">Documentation</a>
+    <a href="#" class="drawer-link">About</a>
+    <a href="https://github.com/DaleStack/Virgo" target="_blank" class="drawer-link">GitHub</a>
+    <a href="#" class="no-underline text-white shadow-lg bg-purple-400 rounded-md px-2 py-1 hover:bg-purple-600 transition-all duration-300">Get Started</a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="drawer-overlay" onclick="closeDrawer()"></div>
+
+<script>
+  function openDrawer() {
+    document.getElementById('drawer').classList.add('open');
+    document.getElementById('overlay').classList.add('show');
+  }
+
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('open');
+    document.getElementById('overlay').classList.remove('show');
+  }
+</script>

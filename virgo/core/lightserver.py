@@ -109,7 +109,7 @@ def serve():
         try:
             from waitress import serve as waitress_serve
             print("Running Virgo with Waitress at http://127.0.0.1:8000")
-            waitress_serve(app, host='127.0.0.1', port=8000)
+            waitress_serve(app, host='0.0.0.0', port=8000)
         except ImportError:
             print("Waitress not found. Falling back to Virgo dev server.")
     else:
@@ -119,6 +119,7 @@ def serve():
             class VirgoApp(gunicorn.app.base.BaseApplication):
                 def load_config(self):
                     self.cfg.set("bind", "127.0.0.1:8000")
+                    
 
                 def load(self):
                     return app
