@@ -3,7 +3,7 @@ import os
 from virgo.core.lightserver import serve
 from migrations import run_migrations  
 from version import __version__
-import apps.landing.routes, apps.docs.routes
+import apps.landing.routes, apps.docs.routes, apps.about.routes
 
 def ensure_db():
     """Create an empty SQLite database if not already present."""
