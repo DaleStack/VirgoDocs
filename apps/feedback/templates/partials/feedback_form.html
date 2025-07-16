@@ -1,0 +1,22 @@
+<div class="border border-white  inline-block text-gray-200 p-4 rounded-md my-18 py-4 shadow-lg shadow-blue-300/50">
+
+    <div class="flex flex-col justify-start py-8">
+        <p class="text-white font-bold text-2xl">Send Your Feedback</p>
+        <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+    </div>
+
+    <form class="flex flex-col text-white space-y-8" action="" method="POST">
+        <div class="flex flex-col space-y-8 lg:space-y-0 lg:flex-row items-center justify-between lg:space-x-8">
+            <input class="outline outline-white/50 rounded-md p-2 w-full" type="text" name="name" placeholder="Your Name" required>
+            <input class="outline outline-white/50 rounded-md p-2 w-full" type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <select class="outline outline-white/50 rounded-md p-2 w-full" name="feedback_type" required>
+            <option value="" disabled selected>Select Feedback Type</option>
+            <option value="bug">Bug Report</option>
+            <option value="feature">Feature Request</option>
+            <option value="general">General Feedback</option>
+        </select>
+        <textarea class="outline outline-white/50 rounded-md p-2 w-full" name="message" placeholder="Your Feedback" required></textarea>
+        <button class="bg-blue-300 p-2 rounded-md cursor-pointer hover:bg-blue-400 transition-all duration-300" type="submit">Submit Feedback</button>
+    </form>
+</div>
