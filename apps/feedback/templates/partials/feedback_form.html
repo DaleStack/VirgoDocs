@@ -12,11 +12,49 @@
         </div>
         <select class="outline outline-white/50 rounded-md p-2 w-full" name="feedback_type" required>
             <option value="" disabled selected>Select Feedback Type</option>
-            <option value="bug">Bug Report</option>
-            <option value="feature">Feature Request</option>
-            <option value="general">General Feedback</option>
+            <option class="bg-black text-white" value="bug">Bug Report</option>
+            <option class="bg-black text-white" value="feature">Feature Request</option>
+            <option class="bg-black text-white" value="general">General Feedback</option>
         </select>
         <textarea class="outline outline-white/50 rounded-md p-2 w-full" name="message" placeholder="Your Feedback" required></textarea>
-        <button class="bg-blue-300 p-2 rounded-md cursor-pointer hover:bg-blue-400 transition-all duration-300" type="submit">Submit Feedback</button>
+        <button class="p-2 rounded-md cursor-pointer transition-all duration-300" type="submit">Submit Feedback</button>
     </form>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const requiredFields = form.querySelectorAll('[required]');
+
+    
+    function checkFormValidity() {
+      let isValid = true;
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          isValid = false;
+        }
+      });
+      submitButton.disabled = !isValid;
+      submitButton.classList.toggle('bg-gray-400', !isValid);
+      submitButton.classList.toggle('bg-blue-300', isValid);
+    }
+
+    
+    requiredFields.forEach(field => {
+      field.addEventListener('input', checkFormValidity);
+    });
+
+    
+    checkFormValidity();
+
+    form.addEventListener('submit', function () {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+      submitButton.classList.add('bg-gray-400');
+      submitButton.classList.remove('bg-blue-300', 'hover:bg-blue-400');
+    });
+  });
+</script>
+
+

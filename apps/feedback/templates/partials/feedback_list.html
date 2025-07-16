@@ -1,3 +1,35 @@
-<div class="text-gray-200">
+<div class="text-gray-200 mb-24">
+    <div class="flex flex-col justify-start py-4">
+        <p class="text-white font-bold text-2xl lg:text-4xl">Feedback List</p>
+        <p>Here are the feedback submissions from users.</p>
+    </div>
 
+    <div>
+        {% if feedback_count > 0 %}
+            <p class="text-gray-400 mb-4">Total Feedbacks: {{ feedback_count }}</p>
+        {% else %}
+            <p class="text-gray-400 mb-4">Total Feedbacks: {{ feedback_count }}</p>
+        {% endif %}
+    </div>
+    {% for feedback in feedback_list %}
+        <div class="border-y border-white/30 space-y-2 my-2 py-4">
+            <div class="flex items-center space-x-8">
+                <p class="text-lg lg:text-2xl font-semibold">{{ feedback.name }}</p>
+                <p>{{ feedback.email }}</p>
+            </div>
+            {% if feedback.feedback_type == "bug" %}
+                <p class="text-red-900 bg-red-300 inline-block px-2 rounded-lg">Bug Report</p>
+            {% elif feedback.feedback_type == "feature" %}
+                <p class="text-amber-900 bg-amber-300 inline-block px-2 rounded-lg">Feature Request</p>
+            {% elif feedback.feedback_type == "general" %}
+                <p class="text-blue-900 bg-blue-300 inline-block px-2 rounded-lg">General Feedback</p>
+            {% endif %}
+            <p>{{ feedback.message }}</p>
+            <p>{{ feedback.created_at.strftime('%B %d, %Y at %I:%M %p') }}</p>
+        </div>
+    {% else %}
+        <p class="text-gray-400">No feedback submissions yet.</p>
+    {% endfor %}
+
+    
 </div>
