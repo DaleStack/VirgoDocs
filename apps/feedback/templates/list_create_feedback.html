@@ -14,5 +14,47 @@
 </head>
 <body class="bg-black" style="font-family: 'Poppins', sans-serif; font-weight: 400; font-style: normal;">
     {% include "./const/navbar.html" %}
+
+    <div class="text-gray-200 px-4 lg:px-28">
+        <div class="flex flex-col items-center justify-center space-y-8 py-18">
+            <p class="text-white text-4xl lg:text-5xl font-bold text-center">I Value Your Feedback</p>
+            <p class="text-center w-auto md:w-120 lg:w-180">Help me improve Virgo by sharing your thoughts, reporting bugs, or suggesting new features. Your input drives my development roadmap.</p>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8 justify-center px-4 lg:px-28">
+        <div class="border border-blue-300/80 inline-block w-60 md:w-80 h-50 p-4 rounded-md">
+            <div class="flex items-center justify-start space-x-4 p-2 ">
+                <img src="/static/feedback/images/bug.svg" alt="Bug">
+                <p class="text-white font-semibold text-xl">Bug Reports</p>
+            </div>
+
+            <div class="text-gray-200 text-start text-sm flex justify-start mb-12">
+                Found a bug? Let me know so I can fix it quickly.
+            </div>
+        </div>
+
+        <div class="border border-blue-300/80 inline-block w-60 md:w-80 h-50 p-4 rounded-md">
+            <div class="flex items-center justify-start space-x-4 p-2 ">
+                <img src="/static/feedback/images/light.svg" alt="Bug">
+                <p class="text-white font-semibold text-xl">Feature Requests</p>
+            </div>
+
+            <div class="text-gray-200 text-start text-sm flex justify-start mb-12">
+                Have an idea for a new feature? I'd love to hear it.
+            </div>
+        </div>
+
+        <div class="border border-blue-300/80 inline-block w-60 md:w-80 h-50 p-4 rounded-md">
+            <div class="flex items-center justify-start space-x-4 p-2 ">
+                <img src="/static/feedback/images/chat.svg" alt="Bug">
+                <p class="text-white font-semibold text-xl">General Feedback</p>
+            </div>
+
+            <div class="text-gray-200 text-start text-sm flex justify-start mb-12">
+                Share your thoughts on documentation, usability, or anything else.
+            </div>
+        </div>
+    </div>
 </body>
 </html>
