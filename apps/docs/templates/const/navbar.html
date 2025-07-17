@@ -34,7 +34,7 @@
     <nav class="flex flex-col p-4 space-y-4 text-sm">
       <a href="/" class="hover:text-blue-300 transition">Home</a>
       <a href="/docs/overview" class="hover:text-blue-300 transition {% if context.current_path == '/docs/overview' %}text-blue-300 font-semibold underline{% else %}hover:text-white hover:underline{% endif %}">Overview</a>
-      <a href="/docs/installation" class="hover:text-blue-300 transition">Installation</a>
+      <a href="/docs/installation" class="hover:text-blue-300 transition {% if context.current_path == '/docs/installation' %}text-blue-300 font-semibold underline{% else %}hover:text-white hover:underline{% endif %}">Installation</a>
       <a href="/docs/routing" class="hover:text-blue-300 transition">Routing</a>
       <a href="/docs/middleware" class="hover:text-blue-300 transition">Middleware</a>
       <a href="/docs/template" class="hover:text-blue-300 transition">Template Engine</a>

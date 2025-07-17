@@ -1,3 +1,54 @@
-<div class="text-white">
-    test for overview
+<div class="text-white lg:mr-80">
+    <div class="flex flex-col justify-start space-y-4">
+        <h1 class="text-3xl lg:text-4xl font-bold">Virgo Framework <span class="text-blue-300">Overview</span></h1>
+        <p class="">Virgo is a lightweight, beginner-friendly Python web framework inspired by Django. It follows a simple project structure and aims to help developers understand how web frameworks work under the hood — while still being powerful enough for real-world apps.</p>
+
+        <p>
+            Virgo encourages learning by doing, making it ideal for students, hobbyists, and developers who want to explore web development beyond black-box magic.
+        </p>
+    </div>
+
+    <div class="mt-12 flex flex-col space-y-8">
+        <h2 class="text-2xl lg:text-3xl font-bold text-blue-300">Features</h2>
+        <ul class="space-y-2">
+            <li><span class="font-semibold">MVT-inspired structure - </span>Follows a minimal Model-View-Template pattern.</li>
+            <li><span class="font-semibold">Custom CLI - </span>Use <span class="bg-blue-300/80 rounded-md px-1">virgo.py</span> to run your server or scaffold apps.</li>
+            <li><span class="font-semibold">SQLAlchemy ORM - </span>Write clean, Pythonic models using SQLAlchemy.</li>
+            <li><span class="font-semibold">Jinja2 Templating Engine - </span>Simple yet powerful templating engine for rendering HTML.</li>
+            <li><span class="font-semibold">App System - </span>Build apps inside a <span class="bg-blue-300/80 rounded-md px-1">apps/</span> directory like in Django.</li>
+            <li><span class="font-semibold">Routing system - </span>Define routes using a clean Python dictionary.</li>
+        </ul>
+    </div>
+
+    <div class="my-10">
+        <p class="text-2xl font-semibold mb-4">Example <span class="text-blue-300">Route</span></p>
+        <div class="flex justify-center items-center">
+            <div">
+                <pre class="whitespace-pre-wrap break-words w-80 md:w-120 lg:w-full text-sm font-mono bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto">
+                    <code class="language-python">
+# apps/blog/routes.py
+
+from virgo.core.routing import routes
+from virgo.core.response import Response, redirect
+from virgo.core.template import render
+from .models import Blog
+
+
+def blog_app(request):
+    blogs = Blog.all()
+    return render("blog_app.html", {"blogs":blogs}, app="note")
+routes["/"] = blog_app</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-end items-center text-white lg:mr-80">
+        <a href="/docs/installation" class="hover:underline">
+            <div class="flex items-center space-x-2 ">
+                <p class="text-blue-300">Next: Installation</p>
+                <img src="/static/docs/images/next.svg" alt="Next">
+            </div>
+        </a>
+    </div>
 </div>
