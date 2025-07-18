@@ -36,14 +36,14 @@ from .models import Blog
 
 def blog_app(request):
     blogs = Blog.all()
-    return render("blog_app.html", {"blogs":blogs}, app="note")
+    return render("blog_app.html", {"blogs":blogs}, app="blog")
 routes["/"] = blog_app</code>
                 </pre>
             </div>
         </div>
     </div>
 
-    <div class="flex justify-end items-center text-white lg:mr-80">
+    <div class="flex justify-end items-center text-white lg:mr-80 my-10">
         <a href="/docs/installation" class="hover:underline">
             <div class="flex items-center space-x-2 ">
                 <p class="text-blue-300">Next: Installation</p>
