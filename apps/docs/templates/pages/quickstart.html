@@ -1,3 +1,80 @@
-<div class="text-white">
-QUICK START PAGE
+<div class="text-white lg:mr-80">
+    <div class="flex flex-col justify-start space-y-4">
+        <h1 class="text-3xl lg:text-4xl font-bold">Virgo Framework <span class="text-blue-300">Installation</span></h1>
+    </div>
+
+    <div class="mt-12 flex flex-col space-y-8">
+        <h2 class="text-2xl lg:text-3xl font-bold text-blue-300">Steps:</h2>
+        <ul class="space-y-2">
+            <li><span class="">1. Fork the Virgo Framework repository. </span><a class="hover:underline text-blue-300" target="_blank" href="https://github.com/DaleStack/Virgo">Click here</a></li>
+            <li><span class="">2. Clone your fork</span></li>
+            <li><span class="">3. Install dependencies</span></li>
+            <li><span class="">4. Run the development server</span></li>
+        </ul>
+    </div>
+
+    <div class="my-10">
+        <p class="text-2xl font-semibold mb-4">Cloning <span class="text-blue-300">Fork</span></p>
+        <p class="font-semibold my-4">**Note that you can change the name of the Forked repository. Just go to your fork on Github and navigate to settings and change the <span class="text-blue-300">Repository name</span>.</p>
+
+        <p class="my-2">Create a new Folder and open it in your terminal. Do not forget the "." at the end.</p>
+        <div class="flex justify-center lg:justify-start items-center">
+            <div class="w-full max-w-2xl">
+                <pre class="whitespace-pre-wrap break-words text-sm font-mono bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto">
+                    <code>
+# terminal
+
+git clone https://github.com/your-username/repo-name.git .</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-10">
+        <p class="text-2xl font-semibold mb-4">Installing <span class="text-blue-300">Dependencies</span></p>
+        <p class="my-2">Create a virtual environment and activate it</p>
+        <p class="my-2">Navigate to your project directory and install the required dependencies:</p>
+        <div class="flex justify-center lg:justify-start items-center">
+            <div class="w-full max-w-2xl">
+                <pre class="whitespace-pre-wrap break-words text-sm font-mono bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto">
+                    <code>
+# terminal
+
+python -m venv venv
+venv/scripts/activate
+pip install -r requirements.txt</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-10">
+        <p class="text-2xl font-semibold mb-4">Running the <span class="text-blue-300">Development Server</span></p>
+        <p class="my-2">Start the development server using the Virgo CLI:</p>
+        <div class="flex justify-center lg:justify-start items-center">
+            <div class="w-full max-w-2xl">
+                <pre class="whitespace-pre-wrap break-words text-sm font-mono bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto">
+                    <code>
+# terminal
+
+py virgo.py lightserve</code>
+                </pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-between items-center my-10">
+        <a href="/docs/overview" class="hover:underline">
+            <div class="flex items-center space-x-2">
+                <img src="/static/docs/images/previous.svg" alt="previous">
+                <p class="text-blue-300">Previous: Overview</p>
+            </div>
+        </a>
+        <a href="/docs/quickstart" class="hover:underline">
+            <div class="flex items-center space-x-2">
+                <p class="text-blue-300">Next: Quick Start</p>
+                <img src="/static/docs/images/next.svg" alt="Next">
+            </div>
+        </a>
+    </div>
 </div>
