@@ -33,10 +33,12 @@
     </div>
     <nav class="flex flex-col p-4 space-y-4 text-sm">
       <a href="/" class="hover:text-blue-300 transition">Home</a>
+      <p class="font-bold">Getting Started</p>
       <a href="/docs/overview" class="hover:text-blue-300 transition {% if context.current_path == '/docs/overview' %}text-blue-300 font-semibold underline{% else %}hover:text-white hover:underline{% endif %}">Overview</a>
       <a href="/docs/installation" class="hover:text-blue-300 transition {% if context.current_path == '/docs/installation' %}text-blue-300 font-semibold underline{% else %}hover:text-white hover:underline{% endif %}">Installation</a>
       <a href="/docs/quickstart" class="hover:text-blue-300 transition {% if context.current_path == '/docs/quickstart' %}text-blue-300 font-semibold underline{% else %}hover:text-white hover:underline{% endif %}">Quick Start</a>
-      <a href="/docs/middleware" class="hover:text-blue-300 transition">Middleware</a>
+      <p class="font-bold">Essentials</p>
+      <a href="/docs/create-app" class="hover:text-blue-300 transition {% if context.current_path == '/docs/create-app' %}text-blue-300 font-semibold underline{% else %}hover:text-white hover:underline{% endif %}">Creating App</a>
       <a href="/docs/template" class="hover:text-blue-300 transition">Template Engine</a>
       <a href="https://github.com/DaleStack/Virgo" target="_blank" class="text-white transition flex items-center space-x-2">
         <img src="/static/docs/images/github.svg" alt="Github" class="w-5 h-5">
