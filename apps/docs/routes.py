@@ -11,3 +11,5 @@ def docs_page(request, page):
     }
     return render("documentation.html", {"context":context}, app="docs")
 routes["/docs/<page>"] = docs_page
+
+
