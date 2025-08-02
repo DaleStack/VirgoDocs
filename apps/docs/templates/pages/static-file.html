@@ -23,44 +23,37 @@ apps/
     </div>
 
     <div class="my-10">
-        <p class="text-2xl font-semibold mb-4">Create a <span class="text-blue-300">route function</span></p>
-        <p class="text-white">Instead of returning a Response(), return a <span class="bg-blue-300/80 rounded-md px-1">render().</span></p>
         <div class="flex justify-center lg:justify-start items-center">
             <div class="w-80 lg:w-full max-w-2xl">
-                <pre class="whitespace-pre-wrap break-words text-sm font-mono bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto">
-                    <code class="language-python">
-# apps/home/routes.py
-
-from virgo.core.routing import routes
-from virgo.core.response import Response, redirect
-from virgo.core.template import render
-
-
-def home_page(request):
-                    #template_name     #app_name
-    return render("home_page.html", app="home")
-routes["/"] = home_page
-                </code>
+                <pre class="text-sm font-mono text-gray-100">
+                    <code class="language-html">
+&lt;!-- app_name/templates/homepage --&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;link rel="stylesheet" href="static/app_name/style.css"&gt; &lt;!-- Link the static file --&gt;
+&lt;title&gt;Homepage&lt;/title&gt;
+&lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 class="home"&gt;This is my Home Page&lt;/h1&gt;         
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
             </div>
         </div>
     </div>
 
     <div class="my-10">
-        <p class="text-white">Inside the app's template folder, create <span class="bg-blue-300/80 rounded-md px-1">home_page.html</span></p>
         <div class="flex justify-center lg:justify-start items-center">
             <div class="w-80 lg:w-full max-w-2xl">
                 <pre class="text-sm font-mono text-gray-100">
-                    <code class="language-html">
-&lt;!-- home/templates/home_page.html --&gt;
-&lt;head&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-&lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-    &lt;body&gt;
-        &lt;h1&gt;This is my Home Page&lt;/h1&gt;         
-    &lt;/body&gt;
-&lt;/html&gt;
+                    <code class="language-css">
+/* app_name/static/style.css */
+
+.home {
+    color: red;
+}
                     </code>
                 </pre>
             </div>
